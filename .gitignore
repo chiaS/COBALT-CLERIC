@@ -4,6 +4,10 @@
 logs
 *.log
 
+# DSStore
+
+*.DS_Store
+
 # Runtime data
 pids
 *.pid
