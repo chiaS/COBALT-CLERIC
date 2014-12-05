@@ -1,9 +1,9 @@
 var express    = require('express');    // call express
 var pitchfork    = require('./pitchfork.js'); 
 var path = require('path');
-
 var helper = require('./helpers.js'); 
 // var Artist    = require('./dbserver.js');
+var Result = require('./results.js');
 
 var router = express.Router();
 
@@ -36,16 +36,21 @@ router.route('/artists')
     });
 
 router.route('/artists/:artist_id')
-  .get(function(req, res) {    
-      
-      pitchfork(req.params.artist_id, function(pitchforkResults, arr){
+
+  .get(function(req, res) {
+    Result.findOne({id: req.params.artist_id}, function(err, artist){
+      if(artist){
+        res.JSON(artist);
+      }else{
+        pitchfork(req.params.artist_id, function(pitchforkResults, arr){
         // console.log(pitchforkResults)
         var averageScore = helper.averageScore(arr)
 
         res.send(JSON.stringify(averageScore))
         //write to database
-      });
-      // console.log()
+        //search api function
+      }
+    })
       // Artist.findById(req.params.artist_id, function(err, artist) {
       //   if (err)
       //     res.send(err);
