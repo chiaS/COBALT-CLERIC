@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('shouldIApp', [
 	 'ui.router',
 	 'shouldIApp.autoComplete',
