@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //temp database hosted on mongoLabs
-var uri = 'mongodb://kdr18702:hr21cobalt@ds041157.mongolab.com:41157/cobalt_records';
+var uri = 'mongodb://admin:admin@ds041157.mongolab.com:41157/cobalt_records';
 
 //connect to MongoLabs database
 mongoose.connect(uri);

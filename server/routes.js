@@ -1,7 +1,7 @@
 var express    = require('express');    // call express
-var pitchfork    = require('./pitchfork.js'); 
+var pitchfork    = require('./pitchfork.js');
 var path = require('path');
-var helper = require('./helpers.js'); 
+var helper = require('./helpers.js');
 // var Artist    = require('./dbserver.js');
 var Result = require('./results.js');
 
@@ -15,13 +15,13 @@ router.use(function(req, res, next) {
 
 // home page route (http://localhost:8080)
 router.get('/', function(req, res) {
-  //res.json({ message: 'hooray! welcome to our api!' }); 
+  //res.json({ message: 'hooray! welcome to our api!' });
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 // about page route (http://localhost:8080/about)
 router.get('/about', function(req, res) {
-  res.send('im the about page!'); 
+  res.send('im the about page!');
 });
 
 router.route('/artists')
@@ -49,15 +49,15 @@ router.route('/artists/:artist_id')
         res.send(JSON.stringify(averageScore))
         //write to database
         //search api function
-      }
     })
+    }
       // Artist.findById(req.params.artist_id, function(err, artist) {
       //   if (err)
       //     res.send(err);
       //   res.json(artist);
       // });
     });
-
+ });
 // Get a single artist api/artists/:artist_id
 
 module.exports = router;
