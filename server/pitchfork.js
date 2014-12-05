@@ -1,10 +1,22 @@
 var p = require('pitchfork')
-var s = new p.Search('wilco')
 
-s.on('ready', function(results){
-  results.forEach(function(review, idx){
-    console.log("review #%d: ",idx, review.truncated());
+
+var pitchfork = function(input, callback){
+  var resultt = new p.Search(input)
+
+  resultt.on('ready', function(pitchforkResults){
+    var arr = [];
+    
+
+    pitchforkResults.forEach(function(review, idx){
+      arr.push(review.attributes.score);
+      // console.log("review #%d: ",idx, review.truncated());
+    });
+    callback(pitchforkResults, arr)
+
   });
-});
 
-module.exports = s
+}
+
+
+module.exports = pitchfork
