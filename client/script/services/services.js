@@ -1,7 +1,7 @@
 angular.module('shouldIApp.services', [])
 .factory('AutoCompleteService', function ($http) {
   var getSource = function(callback){
-         return $http({
+            return $http({
                     method: 'GET',
                     url: '/api/artists'
                   }).then(function(res){
@@ -9,9 +9,9 @@ angular.module('shouldIApp.services', [])
                     callback(res.results);
                   });
 
-    };
+             };
    
   return {
-    getSource: getSource
-  };
+            getSource: getSource
+          };
 });
