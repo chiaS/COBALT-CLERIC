@@ -1,17 +1,14 @@
 angular.module('shouldIApp.autoComplete', [])
-.controller('Controller', function($scope) {
-  $scope.names = ["john", "bill", "charlie", "robert",
-     "alban", "oscar", "marie", "celine", "brad", "drew", 
-     "rebecca", "michel", "francis", "jean", "paul", "pierre", 
-     "nicolas", "alfred", "gerard", "louis", "albert", "edouard", 
-     "benoit", "guillaume", "nicolas", "joseph"];
+
+.controller('Controller', function($scope, AutoCompleteService) {
+ 
 })
-.directive('autoComplete', function($timeout) {
+.directive('autoComplete', function($timeout, AutoCompleteService) {
   return function(scope, element, attrs) {
-        console.log(scope.names);
+        //console.log(AutoCompleteService.getSource());
             element.autocomplete({
-            source: scope.names
+              source: AutoCompleteService.getSource()
             });
-        }
+        };
 });
 
