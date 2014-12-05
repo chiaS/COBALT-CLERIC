@@ -18,8 +18,7 @@ var pitchfork = function(input, callback){
       arr.push(review.attributes.score);
     });
     data.rating = helper.averageScore(arr)
-    console.log(data)
-
+    
     callback(data)
 
   });

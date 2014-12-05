@@ -9,6 +9,7 @@ helpers.averageScore = function(arr){
 }
 
 helpers.generateAnswer = function(rating, rule){
+  console.log('inside helpers.generateAnswer')
   if (rule(rating)){return true}
     else {return false}
 }

@@ -30,19 +30,16 @@ router.route('/artists/:artist_id')
       }
       else{
         pitchfork(req.params.artist_id, function(data){
-          var rating = data['rating']
-          var answer = helper.generateAnswer(rating, function(rating){
-            if (rating > 8) return true
-          });
-          //saves results from API to database
-          requests.saveResult(data);
-
-          // console.log(pitchforkResults)
-        
-
+          
+          var answer
+          if (data['rating']>8) {
+            answer = true
+          }
+          else {answer = false}
+          // requests.saveResult(data);
           res.send(JSON.stringify(answer))
-        //write to database
-        //search api function
+          //write to database
+          //search api function
         })
       }
     })
