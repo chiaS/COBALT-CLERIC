@@ -8,4 +8,4 @@ app.listen(port);
 console.log('Magic happens on port ' + port);
 
 // apply the routes to our application
-app.use('/', router);
+app.use('/api', router);
