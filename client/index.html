@@ -4,29 +4,35 @@
   <meta charset="utf-8">
   <title>Should I ___ ?</title>
   <meta name="description" content="making decision easier">
-  <meta name="viewport" content="width=devie-width">
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
   <!-- Angular View -->
-  <div class="container" ng-view=""></div>
-
+  <div ng-app='shouldIApp'>
+  <form id="form" role="form">
+    <div ui-view></div>
+  </form>
+  </div>
   <!-- Dependencies Scripts -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-  <script src="bower_components/ngFx/dist/ngFx.js"></script>
+   <script src="bower_components/jquery/dist/jquery.js"></script>
+   <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js" ></script>
+   <script src="bower_components/angular/angular.js"></script>
+   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="bower_components/angular-route/angular-route.js"></script>
 
-  <!-- Main Scripts -->
-  <script src="scripts/app.js"></script>
+   <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+   <script src="bower_components/ngFx/dist/ngFx.js"></script>
 
+   <script src="script/autoComplete/autoComplete.js"></script> 
+   <script src="script/app.js"></script>
 </body>
 </html>
+
+
+
