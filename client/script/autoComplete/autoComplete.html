@@ -1,10 +1,10 @@
 <div class="container search-page form-group">
   <h2 id="title" for="Autocomplete">Should I like</h2>
   <div class="search-bar">
-    <form novalidate>
+    <form action="#/results" novalidate>
     <input type="search" class="search-box"  ng-model="data" auto-complete autofocus required placeholder="Enter an artist name">
-    <input type="submit" value="Search" class="get-answer">
+    <input type="submit" value="Search" class="search-button">
     </form>
   </div>
-  <div id="main" ui-view></div>
+  {{ data }}
 </div>
