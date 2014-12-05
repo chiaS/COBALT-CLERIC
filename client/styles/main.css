@@ -35,7 +35,7 @@ h1, h2, h3 {
   z-index: 3;
 }
 
-#title {
+#title, .answer {
   display: inline-block;
   font-size: 6em;
   font-weight: 300;
@@ -71,7 +71,7 @@ input {
   border: none;
 }
 
-.get-answer {
+.search-button {
   font-size: 2em;
   height: 60px;
   width: 120px;
@@ -81,11 +81,19 @@ input {
   margin-top: -10px;
 }
 
-.get-answer:hover {
+.search-button:hover, .again-button:hover {
   background-color: #2185C5;
 }
 
-
+.answer {
+  font-size: 8em;
+}
+.again-button {
+  font-size: 2em;
+  background-color: #7ECEFD;
+  height: 60px;
+  width: 120px;
+}
 
 
 

@@ -3,7 +3,8 @@
 angular.module('shouldIApp', [
 	 'ui.router',
 	 'shouldIApp.autoComplete',
-   'shouldIApp.services'
+   'shouldIApp.services',
+   'shouldIApp.results'
 	 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -13,5 +14,10 @@ angular.module('shouldIApp', [
       url: '/',
       templateUrl: 'script/autoComplete/autoComplete.html',
       controller: 'Controller'
-  });
+    })
+    .state('result', {
+      url: '/results',
+      templateUrl: 'script/results/resultsPage.html',
+      controller: 'resultsController'
+    });
 });
