@@ -4,6 +4,7 @@ var path = require('path');
 var helper = require('./helpers.js');
 // var Artist    = require('./dbserver.js');
 var Result = require('./results.js');
+var requests = require('./requests.js');
 
 var router = express.Router();
 
@@ -43,6 +44,10 @@ router.route('/artists/:artist_id')
         res.JSON(artist);
       }else{
         pitchfork(req.params.artist_id, function(pitchforkResults, arr){
+        
+        //saves results from API to database
+        requests.saveResult(pitchforkResults);
+
         // console.log(pitchforkResults)
         var averageScore = helper.averageScore(arr)
 
