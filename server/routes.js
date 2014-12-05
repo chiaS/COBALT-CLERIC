@@ -1,5 +1,5 @@
 var express    = require('express');    // call express
-var Artist    = require('./dbserver.js');
+// var Artist    = require('./dbserver.js');
 
 var router = express.Router();
 
