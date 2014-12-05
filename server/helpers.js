@@ -8,6 +8,9 @@ helpers.averageScore = function(arr){
   return avg = total/arr.length
 }
 
-
+helpers.generateAnswer = function(rating, rule){
+  if (rule(rating)){return true}
+    else {return false}
+}
 
 module.exports = helpers;
