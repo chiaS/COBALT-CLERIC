@@ -7,7 +7,8 @@ var Schema = mongoose.Schema;
 var ResultSchema = new Schema({
 	artist: String,
 	rating: Number,
-	timeStamp: Number
+	timeStamp: Number,
+	url: String
 });
 
 //Result Mongoose Model definition
