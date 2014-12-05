@@ -6,32 +6,31 @@
   <meta name="description" content="making decision easier">
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-  <!-- Angular View -->
-  <div ng-app='shouldIApp'>
-  <form id="form" role="form">
-    <div ui-view></div>
-  </form>
+<body ng-app="shouldIApp">
+
+  <div id="background">
+    <div class="container" ui-view></div>
   </div>
-  <!-- Dependencies Scripts -->
-   <script src="bower_components/jquery/dist/jquery.js"></script>
-   <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js" ></script>
-   <script src="bower_components/angular/angular.js"></script>
-   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-   <script src="bower_components/angular-route/angular-route.js"></script>
 
-   <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-   <script src="bower_components/ngFx/dist/ngFx.js"></script>
+  <!-- Client-side Requirements -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js" ></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
 
-   <script src="script/autoComplete/autoComplete.js"></script> 
-   <script src="script/services/services.js"></script> 
-   <script src="script/app.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/ngFx/dist/ngFx.js"></script>
+
+
+  <!-- Angular Modules -->
+  <script src="script/autoComplete/autoComplete.js"></script>
+  <script src="script/services/services.js"></script>
+  <script src="script/app.js"></script>
 </body>
 </html>
 
