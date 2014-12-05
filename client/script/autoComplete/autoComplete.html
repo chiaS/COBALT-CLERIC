@@ -1,5 +1,9 @@
-<div class="form-group">
-  <h2 for="Autocomplete">Should I like 
-    <input type="text" class="form-control"  ng-model="data" auto-complete/>
-  </h2>
+<div class="container search-page form-group">
+  <h2 id="title" for="Autocomplete">Should I like</h2>
+  <div class="search-bar">
+    <form novalidate>
+    <input type="search" class="search-box"  ng-model="data" auto-complete autofocus required/>
+    </form>
+  </div>
+  <div id="main" ui-view></div>
 </div>
