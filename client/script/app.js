@@ -1,7 +1,9 @@
 angular.module('shouldIApp', [
 	 'ui.router',
-	 'shouldIApp.autoComplete'
+	 'shouldIApp.autoComplete',
+   'shouldIApp.services'
 	 ])
+
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
@@ -9,5 +11,5 @@ angular.module('shouldIApp', [
       url: '/',
       templateUrl: 'script/autoComplete/autoComplete.html',
       controller: 'Controller'
-    });
+  });
 });
