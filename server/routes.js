@@ -1,6 +1,8 @@
 var express    = require('express');    // call express
 var pitchfork    = require('./pitchfork.js'); 
-var helper    = require('./helpers.js'); 
+var path = require('path');
+
+var helper = require('./helpers.js'); 
 // var Artist    = require('./dbserver.js');
 
 var router = express.Router();
@@ -13,7 +15,8 @@ router.use(function(req, res, next) {
 
 // home page route (http://localhost:8080)
 router.get('/', function(req, res) {
-  res.json({ message: 'hooray! welcome to our api!' }); 
+  //res.json({ message: 'hooray! welcome to our api!' }); 
+  res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 // about page route (http://localhost:8080/about)
