@@ -31,10 +31,17 @@ router.get('/about', function(req, res) {
 });
 
 router.route('/artists')
+<<<<<<< HEAD
 
   .get(function(req, res) {
       var artistsFile = path.join(__dirname, '../artist.json');
       fs.readFile(artistsFile, function(err, data){
+=======
+  .get(function(req, res) {
+      var artistsFile = path.join(__dirname, '../artist.json');
+      fs.readFile(artistsFile, function(err, data){
+        console.log(JSON.parse(data));
+>>>>>>> origin/master
         res.send(JSON.parse(data));
       });  
   });

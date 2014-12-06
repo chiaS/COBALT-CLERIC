@@ -7,7 +7,6 @@ angular.module('shouldIApp.services', [])
           }).then(function(res){
             callback(res.data.results);
           });
-
      };
   var getResults = function(artist, callback){
     console.log('hello '+artist);
@@ -19,11 +18,5 @@ angular.module('shouldIApp.services', [])
             callback(res.data.results);
           });
   }
-  var test = function(){alert('test');};
-  return {
-            getSource: getSource,
-            getResults: getResults,
-            test: test
-         };
-  
+ 
 });
