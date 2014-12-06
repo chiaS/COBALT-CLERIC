@@ -5,10 +5,10 @@ var Schema = mongoose.Schema;
 
 //schema for API results
 var ResultSchema = new Schema({
-	artist: String,
-	rating: Number,
-	timeStamp: Number,
-	url: String
+	artistName: String,
+	url: String,
+	timestamp: Number,
+	rating: Number
 });
 
 //Result Mongoose Model definition

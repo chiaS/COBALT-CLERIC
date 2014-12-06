@@ -24,9 +24,12 @@ router.get('/', function(req, res) {
 router.route('/artists/:artist_id')
 
   .get(function(req, res) {
-    Result.findOne({id: req.params.artist_id}, function(err, artist){
-      if(artist){
-        res.JSON(artist);
+    Result.findOne({artistName: req.params.artist_id}, function(err, artistName){
+      console.log(req.params.artist_id);
+      console.log(artistName);
+      if(artistName){
+        console.log(artist);
+        res.JSON(artistName);
       }
       else{
         pitchfork(req.params.artist_id, function(data){
@@ -36,10 +39,17 @@ router.route('/artists/:artist_id')
             answer = true
           }
           else {answer = false}
-          // requests.saveResult(data);
-          res.send(JSON.stringify(answer))
+          res.send(JSON.stringify(answer));
           //write to database
-          //search api function
+          ///////////////////////////////////
+          requests(data, function(err) {
+              if (err) {
+                console.log("ERROR");
+              }else{
+                console.log("success");
+              }
+            });
+          /////////////////////////////////////
         })
       }
     })
