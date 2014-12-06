@@ -18,5 +18,8 @@ angular.module('shouldIApp.services', [])
             callback(res.data.results);
           });
   }
- 
+
+  return {
+            getSource: getSource
+          };
 });

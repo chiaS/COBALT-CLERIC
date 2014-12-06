@@ -12,12 +12,12 @@ angular.module('shouldIApp', [
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'script/autoComplete/autoComplete.html',
+      templateUrl: 'app/autoComplete/autoComplete.html',
       controller: 'Controller'
     })
     .state('result', {
       url: '/results',
-      templateUrl: 'script/results/resultsPage.html',
+      templateUrl: 'app/results/resultsPage.html',
       controller: 'resultsController'
     });
 });

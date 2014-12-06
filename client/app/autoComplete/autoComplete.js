@@ -18,6 +18,7 @@ angular.module('shouldIApp.autoComplete', [])
 	            element.autocomplete({
 	              source: scope.artists
 	            });
+		   
 		   });
         };
 });
