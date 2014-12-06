@@ -3,7 +3,7 @@
   <div class="search-bar">
     <form action="#/results" novalidate>
     <input type="search" class="search-box"  ng-model="data" auto-complete autofocus required placeholder="Enter an artist name">
-    <input type="submit" value="Search" class="search-button">
+    <input type="submit" value="Search" class="search-button" ng-click="searchArtist()">
     </form>
   </div>
   {{ data }}

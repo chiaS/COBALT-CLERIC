@@ -35,7 +35,6 @@ router.route('/artists')
   .get(function(req, res) {
       var artistsFile = path.join(__dirname, '../artist.json');
       fs.readFile(artistsFile, function(err, data){
-        console.log(JSON.parse(data));
         res.send(JSON.parse(data));
       });  
   });
