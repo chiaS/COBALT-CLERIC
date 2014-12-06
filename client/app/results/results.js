@@ -3,5 +3,5 @@
 angular.module('shouldIApp.results', [])
 
 .controller('resultsController', ['$scope', function($scope) {
-  $scope.answer = 'NO';
+  $scope.answer = 'YES';
 }]);

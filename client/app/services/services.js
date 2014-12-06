@@ -5,12 +5,13 @@ angular.module('shouldIApp.services', [])
                     method: 'GET',
                     url: '/api/artists'
                   }).then(function(res){
-                    callback(res.data.results);
+                    console.log(res.results);
+                    callback(res.results);
                   });
 
              };
    
   return {
             getSource: getSource
-         };
+          };
 });
