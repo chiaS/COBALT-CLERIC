@@ -1,14 +1,19 @@
 angular.module('shouldIApp.autoComplete', [])
 
 .controller('Controller', function($scope, AutoCompleteService) {
+   console.log('error',$scope.error);
+   //fetching artist list 
    AutoCompleteService.getSource(function(artists){
      $scope.artists = artists;
    });
+
+
   
-   $scope.searchArtist = function(){
-     var artistName = $scope.data;
-     AutoCompleteService.getResults(artistName, function(answer){
-       $scope.answer = answer;	
-     });
-   }
+   // $scope.searchArtist = function(){
+   //   alert('pressed btn');
+   //   var artistName = $scope.data;
+   //   AutoCompleteService.getResults(artistName, function(answer){
+   //     $scope.answer = answer;	
+   //   });
+   // }
 })
