@@ -4,10 +4,10 @@ angular.module('shouldIApp.autoComplete', [])
    $scope.searchArtist = function(){
    	 console.log('in searchArtist');
      var artistName = $scope.data;
+
      AutoCompleteService.getResults(artistName, function(answer){
        alert(answer);	
      });
-	 //AutoCompleteService.test();
       
    }
 })
