@@ -2,10 +2,18 @@
   <h2 id="title" for="Autocomplete">Should I like</h2>
   <div class="search-bar">
     <form action="#/results" novalidate>
-    <input class="search-box" ng-model="data" placeholder="Enter an artist name" auto-complete>
-    <input type="submit" value="Search" class="search-button" ng-click="searchArtist()">
+    <!-- <input class="search-box" ng-model="data" placeholder="Enter an artist name" auto-complete> -->
+    <angucomplete inputClass="search-box" 
+              placeholder="Enter an artist name"
+              pause="300"
+              selectedobject="selectedArtist"
+              localdata="artists"
+              searchfields='name'
+              titlefield="name"
+              minlength="2"
+              inputclass="form-control form-control-small"/>
+    
     </form>
   </div>
  
 </div>
-

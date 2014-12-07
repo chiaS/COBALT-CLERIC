@@ -95,7 +95,13 @@ input {
   width: 120px;
 }
 
-
+#_dropdown{
+  margin: 0 auto;
+  font-size: 1.2em;
+  width: 420px;
+  position: relative;
+  right: 58px;
+}
 
 
 
