@@ -1,5 +1,6 @@
 angular.module('shouldIApp.services', [])
 .factory('AutoCompleteService', function ($http) {
+  var answer;
   var getSource = function(callback){
     return $http({
             method: 'GET',
@@ -9,16 +10,24 @@ angular.module('shouldIApp.services', [])
           });
      };
   var getResults = function(artist, callback){
+    console.log(artist);
     return $http({
             method: 'GET',
-            url: '/api/artists/:'+ artist
+            url: '/api/artists/'+ artist
           }).then(function(res){
-          // console.log('get result',res.data);
-            callback(res.data.results);
+            answer = res.data;
+            console.log('get result',res.data);
+            callback(res.data);
           });
   };
-  return { 
+  var getAnswer = function(){
+    alert('in answer ', answer);
+    return answer;
+  };
+  return {  
             getSource: getSource,
-            getResults: getResults
+            getResults: getResults,
+            getAnswer: getAnswer
+
           };
 });

@@ -2,6 +2,6 @@
 
 angular.module('shouldIApp.results', [])
 
-.controller('resultsController', ['$scope', function($scope) {
-  $scope.answer = 'YES';
-}]);
+.controller('resultsController', function($scope, AutoCompleteService) {
+  $scope.answer = AutoCompleteService.getAnswer();
+});
