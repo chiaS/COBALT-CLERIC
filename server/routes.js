@@ -46,14 +46,13 @@ router.route('/artists/:artist_id')
       console.log(req.params.artist_id);
       console.log(data);
       if(data){
-        console.log(data);
-        var answer;
-        if (data['rating']>8) {
+        console.log(data[0].rating);
+        var answer = false;
+        if(data[0].rating > 8){
           answer = true;
         }
-        else {answer = false};
-        res.send(JSON.stringify(answer));
-      }
+        res.send(answer);
+        }
       else{
         pitchfork(req.params.artist_id, function(data){
           
