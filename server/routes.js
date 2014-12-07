@@ -42,20 +42,17 @@ router.route('/artists')
 router.route('/artists/:artist_id')
 
   .get(function(req, res) {
-    Result.find({}, {artistName: req.params.artist_id, url: 1, timestamp: 1, rating:1}, function(err, data){
-      console.log(req.params.artist_id);
-      console.log(data);
-      if(data){
-        console.log(data[0].rating);
+    Result.findOne({}, {artistName: req.params.artist_id, url: 1, timestamp: 1, rating:1}, function(err, data){
+      var artist = req.params.artist_id.toLowerCase();
+      var name = data.artistName.toLowerCase();
+      if(artist === name){
         var answer = false;
-        if(data[0].rating > 8){
+        if(data.rating > 8){
           answer = true;
         }
         res.send(answer);
-        }
-      else{
+      } else {
         pitchfork(req.params.artist_id, function(data){
-          
           var answer
           if (data['rating']>8) {
             answer = true

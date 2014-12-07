@@ -4,7 +4,7 @@ var saveResult = function (data, callback) {
   //creates new instance of result
   var newResult = new Result({
     artistName: data.artistName,
-	  url: data.url,
+	url: data.url,
     timestamp: data.timestamp,
     rating: data.rating
   });
