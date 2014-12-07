@@ -9,7 +9,6 @@ angular.module('shouldIApp.services', [])
           });
      };
   var getResults = function(artist, callback){
-    console.log('hello '+artist);
     return $http({
             method: 'GET',
             url: '/api/artists/:'+ artist
@@ -17,9 +16,9 @@ angular.module('shouldIApp.services', [])
           // console.log('get result',res.data);
             callback(res.data.results);
           });
-  }
-
-  return {
-            getSource: getSource
+  };
+  return { 
+            getSource: getSource,
+            getResults: getResults
           };
 });
