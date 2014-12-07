@@ -2,9 +2,10 @@ var Result = require('./results.js');
 
 var saveResult = function (data, callback) {
   //creates new instance of result
+  var artist = data.artistName.toLowerCase();
   var newResult = new Result({
-    artistName: data.artistName,
-	  url: data.url,
+    artistName: artist,
+	url: data.url,
     timestamp: data.timestamp,
     rating: data.rating
   });

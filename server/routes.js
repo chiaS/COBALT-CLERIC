@@ -42,20 +42,22 @@ router.route('/artists')
 router.route('/artists/:artist_id')
 
   .get(function(req, res) {
-    Result.find({}, {artistName: req.params.artist_id, url: 1, timestamp: 1, rating:1}, function(err, data){
-      console.log(req.params.artist_id);
-      console.log(data);
-      if(data){
-        console.log(data[0].rating);
+    var artist = req.params.artist_id.toLowerCase()
+
+    Result.find({artistName: artist}, function(err, data){
+      
+      if(data.length){
+        if(data[0].artistName === artist){
+        console.log("found artist");
         var answer = false;
-        if(data[0].rating > 8){
+        if(data.rating > 8){
           answer = true;
         }
+       }
         res.send(answer);
-        }
-      else{
+      } else {
         pitchfork(req.params.artist_id, function(data){
-          
+          console.log("in pitch");
           var answer
           if (data['rating']>8) {
             answer = true
@@ -69,6 +71,7 @@ router.route('/artists/:artist_id')
                 console.log("ERROR");
               }else{
                 console.log("success");
+                console.log(data);
               }
             });
           /////////////////////////////////////
