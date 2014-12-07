@@ -2,7 +2,8 @@
 
 angular.module('shouldIApp', [
 	 'ui.router',
-	 'shouldIApp.autoComplete',
+   'angucomplete',
+   'shouldIApp.autoComplete',
    'shouldIApp.services',
    'shouldIApp.results'
 	 ])

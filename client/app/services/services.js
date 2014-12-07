@@ -1,12 +1,17 @@
 angular.module('shouldIApp.services', [])
 .factory('AutoCompleteService', function ($http) {
-  var answer;
+  var answer = '?';
   var getSource = function(callback){
     return $http({
             method: 'GET',
             url: '/api/artists'
           }).then(function(res){
-            callback(res.data.results);
+            var result = [];
+            res.data.results.forEach(function(artist){
+              result.push({name: artist});
+            });
+
+            callback(result);
           });
      };
   var getResults = function(artist, callback){
@@ -15,13 +20,15 @@ angular.module('shouldIApp.services', [])
             method: 'GET',
             url: '/api/artists/'+ artist
           }).then(function(res){
+            console.log('this is working');
             answer = res.data;
             console.log('get result',res.data);
             callback(res.data);
+          }).catch(function(){
+            console.error('something screwed up');
           });
   };
   var getAnswer = function(){
-    alert('in answer ', answer);
     return answer;
   };
   return {  
