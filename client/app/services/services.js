@@ -31,10 +31,14 @@ angular.module('shouldIApp.services', [])
   var getAnswer = function(){
     return answer;
   };
+  var setAnswer = function(ans){
+    console.log('setting answer to '+ ans);
+    answer = ans;
+  }
   return {  
             getSource: getSource,
             getResults: getResults,
-            getAnswer: getAnswer
-
+            getAnswer: getAnswer,
+            setAnswer: setAnswer
           };
 });

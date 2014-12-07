@@ -1,7 +1,6 @@
 angular.module('shouldIApp.autoComplete', [])
 
 .controller('Controller', function($scope, AutoCompleteService) {
-   console.log('error',$scope.error);
    //fetching artist list 
    AutoCompleteService.getSource(function(artists){
      $scope.artists = artists;

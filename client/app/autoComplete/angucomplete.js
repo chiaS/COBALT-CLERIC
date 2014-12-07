@@ -57,8 +57,10 @@ angular.module('angucomplete', [] )
                 $scope.isFound = false;
               }else{
                   AutoCompleteService.getResults(artistName, function(answer){
-                    $scope.answer = answer;  
+                    AutoCompleteService.setAnswer((answer)? 'YES' : 'NO');  
+                    window.location.href = '#/results';
                   });
+
               }
             }
 
