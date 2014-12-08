@@ -1,7 +1,7 @@
 
 var express = require('express');    // call express
-var app = express(); 
-var router = require('./routes.js')
+var app = express();
+var router = require('./routes.js');
 var path = require('path');
 var connection = require('./connection');
 

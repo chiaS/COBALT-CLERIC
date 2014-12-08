@@ -1,3 +1,5 @@
+'use strict';
+
 var Result = require('./results.js');
 
 var saveResult = function (data, callback) {
@@ -5,7 +7,7 @@ var saveResult = function (data, callback) {
   var artist = data.artistName.toLowerCase();
   var newResult = new Result({
     artistName: artist,
-	url: data.url,
+	  url: data.url,
     timestamp: data.timestamp,
     rating: data.rating
   });
