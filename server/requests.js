@@ -11,7 +11,8 @@ var saveResult = function (data, callback) {
     artistName: strip(artist),
 	  url: data.url,
     timestamp: data.timestamp,
-    rating: data.rating
+    rating: data.rating,
+    cover: data.cover
   });
   console.log(newResult);
 

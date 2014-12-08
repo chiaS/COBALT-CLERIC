@@ -8,7 +8,8 @@ var ResultSchema = new Schema({
 	artistName: String,
 	url: String,
 	timestamp: Number,
-	rating: Number
+	rating: Number,
+	cover: String
 });
 
 //Result Mongoose Model definition

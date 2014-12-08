@@ -56,17 +56,29 @@ router.route('/artists/:artist_id')
           answer = true;
         }
        }
-       console.log(data);
-        res.send(answer);
+       var artistInfo = {
+        'answer' : answer,
+        'url' : data[0].url,
+        'cover' : data[0].cover
+       }
+        res.send(artistInfo);
       } else {
         pitchfork(req.params.artist_id, function(data){
           console.log('in pitch');
           var answer = false;
+          console.log(data);
           if (data.rating >8) {
             answer = true;
           }
           else { answer = false; }
-          res.send(JSON.stringify(answer));
+          
+          var artistInfo = {
+            'answer' : answer,
+            'url' : data.url,
+            'cover' : data.cover
+          }
+
+          res.send(artistInfo);
           //write to database
           ///////////////////////////////////
           requests(data, function(err) {
