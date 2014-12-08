@@ -54,6 +54,7 @@ router.route('/artists/:artist_id')
           answer = true;
         }
        }
+       console.log(data);
         res.send(answer);
       } else {
         pitchfork(req.params.artist_id, function(data){
