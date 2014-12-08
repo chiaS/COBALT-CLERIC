@@ -9,11 +9,8 @@ var pitchfork = function(input, callback){
     var arr = [];
     data.artistName = pitchforkResults[0].attributes.artist;
     data.url = pitchforkResults[0].attributes.url;
+    data.cover = pitchforkResults[0].attributes.cover;
     data.timestamp = Date.now()
-
-
-    
-
     pitchforkResults.forEach(function(review, idx){
       arr.push(review.attributes.score);
     });
