@@ -23,8 +23,14 @@
 > Visit the site, enter a desired artist, then submit your request. Your answer will be provided immediately
 
 ## Requirements
-
-- To be updated
+  bluebird: 2.3.11
+  body-parser: 1.10.0
+  express: 4.10.4
+  express-partials: 0.3.0
+  express-session": 1.9.3
+  mongoose: 3.8.20
+  pitchfork: 0.0.8
+  request: 2.49.0
 
 ## Development
 
