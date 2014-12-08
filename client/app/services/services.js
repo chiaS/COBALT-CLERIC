@@ -1,7 +1,7 @@
 angular.module('shouldIApp.services', [])
 .factory('AutoCompleteService', function ($http) {
   var answer = '?';
-  var info = 'no extra information';
+  var info = null;
   var getSource = function(callback){
     return $http({
             method: 'GET',
@@ -20,7 +20,11 @@ angular.module('shouldIApp.services', [])
             method: 'GET',
             url: '/api/artists/'+ artist
           }).then(function(res){
-            callback(res.data);
+            //set data right away
+            console.log('urlllll',res.data.url);
+            setInfo({url: res.data.url, cover: res.data.cover});
+            setAnswer((res.data.answer)? 'YES' : 'NO');
+            callback();
           }).catch(function(){
             console.error('something screwed up');
           });
@@ -39,6 +43,8 @@ angular.module('shouldIApp.services', [])
     answer = ans;
   }
   return {  
+            getInfo: getInfo,
+            setInfo: setInfo,
             getSource: getSource,
             getResults: getResults,
             getAnswer: getAnswer,
