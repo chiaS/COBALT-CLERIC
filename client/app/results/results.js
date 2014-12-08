@@ -4,8 +4,8 @@ angular.module('shouldIApp.results', [])
 
 .controller('resultsController', function($scope, AutoCompleteService) {
   $scope.answer = AutoCompleteService.getAnswer();
-  $scope.displayInfo = function(event){
+  $scope.displayInfo = function(){
   	$scope.info = AutoCompleteService.getInfo();
-  	//'http://pitchfork.com/reviews/albums/18614-lorde-pure-heroine/';
+  	//$scope.info = 'http://pitchfork.com/reviews/albums/18614-lorde-pure-heroine/';
   }
 });

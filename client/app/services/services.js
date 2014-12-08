@@ -20,7 +20,11 @@ angular.module('shouldIApp.services', [])
             method: 'GET',
             url: '/api/artists/'+ artist
           }).then(function(res){
-            callback(res.data);
+            //set data right away
+            var anss = JSON.parse(res.data);
+            
+            setAnswer((anss)? 'YES' : 'NO');
+            callback();
           }).catch(function(){
             console.error('something screwed up');
           });
@@ -29,7 +33,8 @@ angular.module('shouldIApp.services', [])
     info = inf;
   };
   var getInfo = function(){
-    return info;
+    return 'more and more and more';
+   // return info;
   };
   var getAnswer = function(){
     return answer;
@@ -39,6 +44,8 @@ angular.module('shouldIApp.services', [])
     answer = ans;
   }
   return {  
+            getInfo: getInfo,
+            setInfo: setInfo,
             getSource: getSource,
             getResults: getResults,
             getAnswer: getAnswer,
