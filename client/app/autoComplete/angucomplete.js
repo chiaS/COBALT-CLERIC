@@ -53,11 +53,21 @@ angular.module('angucomplete', [] )
             $scope.searchArtist = function(){
               var artistName = $scope.searchStr||$scope.selectedObject.originalObject.name;
               var artistList = _.pluck($scope.localData, 'name');
+              /*capitalize artist name for search*/
+              var artistWrds = artistName.split(' ');
+              var capitalizedName = [];
+              _.each(artistWrds, function(wrd){
+                capitalizedName.push(wrd.charAt(0).toUpperCase()+ wrd.slice(1));
+              });
+              artistName = capitalizedName.join(' ');
+              console.log('artist name', artistName);
               if(artistList.indexOf(artistName)===-1){
                 $scope.isFound = false;
               }else{
-                  AutoCompleteService.getResults(artistName, function(answer){
-                    AutoCompleteService.setAnswer((answer)? 'YES' : 'NO');  
+                  //data obj
+                  AutoCompleteService.getResults(artistName, function(){
+                  //  AutoCompleteService.setAnswer((answer)? 'YES' : 'NO'); 
+                  //  AutoCompleteService.setInfo() 
                     window.location.href = '#/results';
                   });
 
