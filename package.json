@@ -4,11 +4,13 @@
   "description": "making decision easier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "postinstall": "bower cache clean && bower install",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/COBALT-CLERIC/COBALT-CLERIC.git"
+    "url": "https://github.com/chiaS/COBALT-CLERIC.git"
   },
   "keywords": [
     "should",
@@ -25,12 +27,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/COBALT-CLERIC/COBALT-CLERIC/issues"
+    "url": "https://github.com/chiaS/COBALT-CLERIC/issues"
   },
-  "homepage": "https://github.com/COBALT-CLERIC/COBALT-CLERIC",
+  "homepage": "https://github.com/chiaS/COBALT-CLERIC",
   "dependencies": {
     "bluebird": "^2.3.11",
     "body-parser": "^1.10.0",
+    "bower": "^1.3.12",
     "express": "^4.10.4",
     "express-partials": "^0.3.0",
     "express-session": "^1.9.3",
