@@ -8,7 +8,7 @@ angular.module('shouldIApp.results', [])
 
  // $scope.displayInfo = function(){
   	 var infoObj = AutoCompleteService.getInfo();
-  	 $scope.url = infoObj.url;
+  	 $scope.url = "http://pitchfork.com" +infoObj.url;
   	 $scope.cover = infoObj.cover;
   	 $scope.message = 'View source';
 //  };
